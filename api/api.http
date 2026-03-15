@@ -4,3 +4,37 @@ GET {{api_HostAddress}}/weatherforecast/
 Accept: application/json
 
 ###
+
+POST {{api_HostAddress}}/api/auth/register
+Content-Type: application/json
+
+{
+	"name": "Darlan",
+	"email": "darlan@corpbox.dev",
+	"password": "SenhaForte123"
+}
+
+###
+
+POST {{api_HostAddress}}/api/auth/login
+Content-Type: application/json
+
+{
+	"email": "darlan@corpbox.dev",
+	"password": "SenhaForte123"
+}
+
+###
+
+POST {{api_HostAddress}}/api/auth/refresh
+
+###
+
+POST {{api_HostAddress}}/api/auth/logout
+
+###
+
+GET {{api_HostAddress}}/api/auth/me
+Authorization: Bearer {{access_token}}
+
+###
