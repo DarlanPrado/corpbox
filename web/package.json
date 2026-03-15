@@ -7,11 +7,23 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "openapi:types": "cross-env NODE_TLS_REJECT_UNAUTHORIZED=0 openapi-typescript https://localhost:7012/openapi/v1.json --output app/generated/openapi.types.ts",
+    "openapi:zod": "cross-env NODE_TLS_REJECT_UNAUTHORIZED=0 openapi-zod-client https://localhost:7012/openapi/v1.json --output app/generated/openapi.zod.ts --export-schemas --strict-objects",
+    "openapi:generate": "npm run openapi:types && npm run openapi:zod"
   },
   "dependencies": {
+    "@zodios/core": "^10.9.6",
+    "@nuxtjs/i18n": "^9.5.4",
     "nuxt": "^4.4.2",
     "vue": "^3.5.30",
-    "vue-router": "^5.0.3"
+    "vue-i18n": "^11.1.12",
+    "vue-router": "^5.0.3",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "cross-env": "^10.0.0",
+    "openapi-typescript": "^7.10.1",
+    "openapi-zod-client": "^1.18.3"
   }
 }
