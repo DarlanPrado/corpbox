@@ -1,29 +1,27 @@
 {
-  "name": "saas",
-  "type": "module",
+  "name": "web",
   "private": true,
+  "type": "module",
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
-    "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "openapi:types": "cross-env NODE_TLS_REJECT_UNAUTHORIZED=0 openapi-typescript https://localhost:7012/openapi/v1.json --output app/generated/openapi.types.ts",
-    "openapi:zod": "cross-env NODE_TLS_REJECT_UNAUTHORIZED=0 openapi-zod-client https://localhost:7012/openapi/v1.json --output app/generated/openapi.zod.ts --export-schemas --strict-objects",
-    "openapi:generate": "npm run openapi:types && npm run openapi:zod"
+    "lint": "eslint .",
+    "typecheck": "nuxt typecheck"
   },
   "dependencies": {
-    "@zodios/core": "^10.9.6",
-    "@nuxtjs/i18n": "^9.5.4",
+    "@iconify-json/lucide": "^1.2.96",
+    "@iconify-json/simple-icons": "^1.2.72",
+    "@nuxt/ui": "^4.5.1",
     "nuxt": "^4.4.2",
-    "vue": "^3.5.30",
-    "vue-i18n": "^11.1.12",
-    "vue-router": "^5.0.3",
-    "zod": "^3.25.76"
+    "tailwindcss": "^4.2.1"
   },
   "devDependencies": {
-    "cross-env": "^10.0.0",
-    "openapi-typescript": "^7.10.1",
-    "openapi-zod-client": "^1.18.3"
-  }
+    "@nuxt/eslint": "^1.15.2",
+    "eslint": "^10.0.3",
+    "typescript": "^5.9.3",
+    "vue-tsc": "^3.2.5"
+  },
+  "packageManager": "pnpm@10.30.3"
 }
